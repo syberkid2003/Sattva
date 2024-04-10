@@ -1,0 +1,38 @@
+{% extends "base.html"%}
+{%block topHead%} Test {{val}}! {%endblock topHead%}
+{%block css%} 
+{%endblock css%}
+{%block content%}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-6">
+            <video id="webcam" width="620" height="560" autoplay></video>
+        </div>
+        <div class="col-lg-6">
+            
+            <a href="{% url 'setup' %}"    style="margin-top: 25% ; margin-left: 25%;" disabled> <button  class="btn btn-warning" >Start Test</button></a><br>
+
+            <a href="{% url 'home' %}"   id="stopTest"  style="margin-top: 25% ; margin-left: 25%;" disabled> <button  class="btn btn-danger" >Cancel Test</button></a><br>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+  const webcam = document.getElementById('webcam');
+
+  if (navigator.mediaDevices.getUserMedia) {
+      navigator.mediaDevices.getUserMedia({ video: true })
+          .then((stream) => {
+              webcam.srcObject = stream;
+          })
+          .catch((error) => {
+              console.error('Error accessing webcam:', error);
+          });
+  } else {
+      console.error('getUserMedia not supported in this browser.');
+  }
+</script>
+
+{%endblock content%} 

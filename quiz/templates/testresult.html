@@ -1,0 +1,69 @@
+{% extends "base.html"%}
+{%block topHead%} Test {{val}}! {%endblock topHead%}
+{%block css%} 
+{%endblock css%}
+{%block content%}
+<h1 style="margin-top: 1%;"> {{msg}} </h1>
+<div class="container" style="margin-top: 1%;">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">USER NAME</h5>
+                    <p class="card-text">{{user.name}}</p>
+                </div>
+            </div> 
+        </div>
+        <div class="col-lg-4">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">USER CONTACT</h5>
+                    <p class="card-text">{{user.contact}}</p>
+                </div>
+            </div> 
+            
+        </div>
+        <div class="col-lg-4">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">USER EMAIL</h5>
+                    <p class="card-text">{{user.email}}</p>
+                </div>
+            </div>   
+            
+        </div>
+          
+    </div>
+    
+    <div class="row" style="padding-top: 1%;">
+        <div class="col-lg-4">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">USER NO.OF TESTS </h5>
+                    <p class="card-text">{{user.test_no}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">College </h5>
+                    <p class="card-text">{{user.college}}</p>
+                </div>
+            </div> 
+        </div>
+        <div class="col-lg-4">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Hall Ticket Number </h5>
+                    <p class="card-text">{{user.studentId}}</p>
+                </div>
+            </div>  
+            
+        </div>
+           
+    </div>
+
+    
+</div>
+{%endblock content%} 

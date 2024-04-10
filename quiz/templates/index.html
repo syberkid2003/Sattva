@@ -1,0 +1,38 @@
+{% extends "base.html"%}
+{%block topHead%} welcome {{user_name}} ! {%endblock topHead%}
+{%block css%} 
+{%endblock css%}
+{%block content%} 
+    <div class="container" style="margin-top: 5%;">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">tests compleated</h5>
+                      <p class="card-text">{{user.test_no}}</p>
+                    </div>
+                </div>   
+            </div>
+            <div class="col-lg-4">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">total marks</h5>
+                      <p class="card-text">{{user.total}}</p>
+                    </div>
+                </div> 
+                
+            </div>
+            <div class="col-lg-4">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">average marks</h5>
+                      <p class="card-text">{{user.test_avg}}</p>
+                    </div>
+                </div> 
+                
+            </div>
+
+        </div>
+    </div>
+
+{%endblock content%}

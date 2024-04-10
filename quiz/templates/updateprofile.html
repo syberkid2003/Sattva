@@ -1,0 +1,31 @@
+{% extends "base.html"%}
+{%block topHead%}Profile update! {%endblock topHead%}
+{%block content%} 
+    <div class="container border" style="margin-top: 3%; ">
+        <form class="form-signin " id="myForm" method ="POST"  >  {% csrf_token %}
+            <h1>USER DETAILS </h1>
+    
+            <div class="form-group">
+                <label for="name">full  name</label>
+                <input type="text" class="form-control" id="name" name="name" value ="{{user.name}}" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="user_name">contact</label>
+                <input type="tel" name="user" class="form-control" id="user_name" value="{{user.contact}}" required>
+            </div>
+    
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" name="mail" class="form-control" id="exampleInputEmail1" value="{{user.email}}" required readonly>
+            </div>
+
+            <button type="submit" class="btn btn-primary">update</button>
+            <button type="reset" class="btn btn-warning"> reset</button>
+            <div class="form-group">
+              {{error}}
+            </div>
+          </form>
+
+    </div>
+{%endblock content%}
